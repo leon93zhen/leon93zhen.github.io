@@ -7,33 +7,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 头部 -->
-    <header class="header">
+    <!-- 头部导航 -->
+    <nav class="nav">
         <div class="container">
-            <div class="header-content">
-                <div class="logo">个人网站</div>
-                <nav class="nav">
-                    <ul>
-                        <li><a href="#home">首页</a></li>
-                        <li><a href="#projects">项目</a></li>
-                        <li><a href="#about">关于</a></li>
-                        <li><a href="#contact">联系</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#projects">项目</a></li>
+
+                <li><a href="#contact">联系</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
     <!-- 个人简介 -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>你好，我是<span class="highlight">梁镇</span></h1>
-                <p class="subtitle">前端开发工程师</p>
-                <p class="description">我专注于创建用户友好的web应用程序，具有优秀的用户体验和视觉设计</p>
-                <div class="buttons">
-                    <a href="#projects" class="btn primary">查看作品</a>
-                    <a href="#contact" class="btn secondary">联系我</a>
+                <div class="hero-image">
+                    <img src="数字形象.jpeg" alt="个人照片">
+                    <h1>你好，我是<span class="highlight">梁镇</span></h1>
+                </div>
+                <div class="hero-text">
+                    <p class="description">擅长金融科技类交叉领域业务，有金融AI应用、资产配置和量化研究经验</p>
+                    <div class="experience">
+                        <p><strong>工作经历：</strong>蚂蚁集团、海通证券</p>
+                        <p><strong>教育背景：</strong>同济大学、西南财经大学</p>
+                    </div>
+                    <div class="skills">
+                        <h3>技能</h3>
+                        <div class="skill-tags">
+                            <span>大模型应用技术：KG、RAG、prompt等</span>
+                            <span>编程能力：Python/Matlab/R/VBA/SQL等</span>
+                            <span>金融分析能力：各类金融数据库、多因子建模等</span>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <a href="#projects" class="btn primary">查看作品</a>
+                        <a href="#contact" class="btn secondary">联系我</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -42,91 +53,173 @@
     <!-- 项目展示 -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">我的项目</h2>
-            <div class="project-grid">
-                <!-- 项目1 -->
-                <div class="project-card">
+            <h2 class="section-title">项目示例</h2>
+            <p class="section-subtitle">从部分研究项目，了解我的能力圈，共同探索一切可能性</p>
+            <div class="project-tabs">
+                <button class="tab-btn active" data-category="featured">精选</button>
+                <button class="tab-btn" data-category="ai">AI应用</button>
+                <button class="tab-btn" data-category="asset">大类资产配置</button>
+                <button class="tab-btn" data-category="quant">量化交易策略</button>
+                <button class="tab-btn" data-category="advisor">用户投顾策略</button>
+            </div>
+            <div class="project-grid active" data-category="featured">
+                <div class="project-card" data-modal-id="research-modal">
                     <div class="project-image">
-                        <img src="project1.jpg" alt="项目1">
+                        <img src="AI应用1.png" alt="AI投研应用">
                     </div>
                     <div class="project-info">
-                        <h3>项目名称1</h3>
-                        <p>项目描述1 - 简短描述项目的功能和特点</p>
+                        <h3>AI投研应用</h3>
+                        <p>面向B端的AI助手，提供高水平的宏观分析、市场分析、标的分析等服务，大幅提升分析效率和覆盖范围。</p>
                         <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+                            <span>LLM</span>
+                            <span>RAG</span>
+                            <span>Function Call</span>
+                            <span>投研分析</span>
                         </div>
-                        <a href="#" class="project-link">查看详情</a>
                     </div>
                 </div>
-                
-                <!-- 项目2 -->
-                <div class="project-card">
+                <div class="project-card" data-modal-id="advisor-modal">
                     <div class="project-image">
-                        <img src="project2.jpg" alt="项目2">
+                        <img src="AI应用2.png" alt="AI投顾应用">
                     </div>
                     <div class="project-info">
-                        <h3>项目名称2</h3>
-                        <p>项目描述2 - 简短描述项目的功能和特点</p>
+                        <h3>AI投顾应用</h3>
+                        <p>面向C端的AI金融管家，提供专业的市场解读、基金诊断、资产配置等服务，服务数千万用户。</p>
                         <div class="project-tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
+                            <span>LLM</span>
+                            <span>RAG</span>
+                            <span>SFT</span>
+                            <span>智能投顾</span>
                         </div>
-                        <a href="#" class="project-link">查看详情</a>
                     </div>
                 </div>
-                
-                <!-- 项目3 -->
-                <div class="project-card">
+            </div>
+            <div class="project-grid" data-category="ai">
+                <div class="project-card" data-modal-id="research-modal">
                     <div class="project-image">
-                        <img src="project3.jpg" alt="项目3">
+                        <img src="AI应用1.png" alt="AI投研应用">
                     </div>
                     <div class="project-info">
-                        <h3>项目名称3</h3>
-                        <p>项目描述3 - 简短描述项目的功能和特点</p>
+                        <h3>AI投研应用</h3>
+                        <p>面向B端的AI助手，提供高水平的宏观分析、市场分析、标的分析等服务，大幅提升分析效率和覆盖范围。</p>
                         <div class="project-tags">
-                            <span>Vue</span>
-                            <span>Express</span>
-                            <span>MySQL</span>
+                            <span>LLM</span>
+                            <span>RAG</span>
+                            <span>Function Call</span>
+                            <span>投研分析</span>
                         </div>
-                        <a href="#" class="project-link">查看详情</a>
+                    </div>
+                </div>
+                <div class="project-card" data-modal-id="advisor-modal">
+                    <div class="project-image">
+                        <img src="AI应用2.png" alt="AI投顾应用">
+                    </div>
+                    <div class="project-info">
+                        <h3>AI投顾应用</h3>
+                        <p>面向C端的AI金融管家，提供专业的市场解读、基金诊断、资产配置等服务，服务数千万用户。</p>
+                        <div class="project-tags">
+                            <span>LLM</span>
+                            <span>RAG</span>
+                            <span>SFT</span>
+                            <span>智能投顾</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI投研应用模态框 -->
+            <div id="research-modal" class="modal">
+                <div class="modal-content">
+                    <button class="modal-close" data-modal-id="research-modal"></button>
+                    <h2 class="modal-title">AI投研应用</h2>
+                    <p class="modal-subtitle">面向B端，内部投研分析师和外部机构使用的AI助手</p>
+                    
+                    <div class="modal-section">
+                        <h3>项目描述</h3>
+                        <ul>
+                            <li>构建投研投顾知识库（包括专家调研、市场分析报告，20+宏观分析框架、100+行业分析框架，20+商品分析框架等），通过prompt和RAG检索提升专业问题生成效果</li>
+                            <li>构建市场、基金/股票产品、用户账户量化分析和诊断工具，通过function call调用</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>项目成果</h3>
+                        <p>AI助手可以高水平进行宏观分析、市场分析、标的分析、政策/异动/大事解读和报告解读，分析效率大幅提升（2小时降至0.3小时）、供给覆盖大幅增加（以市场异动为例，从每年数十篇提升到数千篇）</p>
+                    </div>
+                    
+                    <a href="https://zhu.alipay.com/fin-research/" target="_blank" class="modal-link">访问项目</a>
+                </div>
+            </div>
+
+            <!-- AI投顾应用模态框 -->
+            <div id="advisor-modal" class="modal">
+                <div class="modal-content">
+                    <button class="modal-close" data-modal-id="advisor-modal"></button>
+                    <h2 class="modal-title">AI投顾应用</h2>
+                    <p class="modal-subtitle">面向C端，大众用户的AI金融管家</p>
+                    
+                    <div class="modal-section">
+                        <h3>项目描述</h3>
+                        <ul>
+                            <li>构建投研投顾知识库（包括专家调研、市场分析报告，20+宏观分析框架、100+行业分析框架，20+商品分析框架等），通过prompt和RAG检索提升专业问题生成效果</li>
+                            <li>构建市场、基金/股票产品、用户账户量化分析和诊断工具，通过function call调用</li>
+                            <li>参与prompt和样本生产和改写，以及GC内容的打标和评测标准化，通过sft微调训练，提升生产内容的严谨性和一致性</li>
+                            <li>协同运营，设计和改进全场景的问答铺设，增强对话引导（sug）等</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3>项目成果</h3>
+                        <ul>
+                            <li>AI助手可高精度回答市场异动解读、行情分析、基金诊断、个性化资产配置方案、用户收益分析和归因、基金推荐等专业问题，相关问题解决率提升到90%+（基座模型仅40%+）</li>
+                            <li>相关内容深度聊天用户和采纳服务用户超百万，项目整体月活数千万级别</li>
+                        </ul>
+                    </div>
+                    
+                    <p class="modal-section">备注：可在支付宝-理财、蚂蚁财富APP上体验</p>
+                </div>
+            </div>
+            <div class="project-grid" data-category="asset">
+                <div class="project-card" data-modal-id="asset-modal">
+                    <div class="project-info">
+                        <h3>陆续更新，敬请期待</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="project-grid" data-category="quant">
+                <div class="project-card" data-modal-id="quant-modal">
+                    <div class="project-info">
+                        <h3>陆续更新，敬请期待</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="project-grid" data-category="advisor">
+                <div class="project-card" data-modal-id="advisor-strategy-modal">
+                    <div class="project-info">
+                        <h3>陆续更新，敬请期待</h3>
+                    </div>
+                </div>
+                <div class="project-card" data-modal-id="advisor-modal">
+                    <div class="project-image">
+                        <img src="AI应用2.png" alt="AI投顾应用">
+                    </div>
+                    <div class="project-info">
+                        <h3>AI投顾应用</h3>
+                        <p>面向C端的AI金融管家，提供专业的市场解读、基金诊断、资产配置等服务，服务数千万用户。</p>
+                        <div class="project-tags">
+                            <span>LLM</span>
+                            <span>RAG</span>
+                            <span>SFT</span>
+                            <span>智能投顾</span>
+                        </div>
+                        <button class="project-link" onclick="openModal('advisor-modal')">查看详情</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 关于我 -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">关于我</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="profile.jpg" alt="个人照片">
-                </div>
-                <div class="about-text">
-                    <p>这里是关于我的详细介绍。我是一名富有激情的前端开发工程师，擅长创建用户友好的网站和应用程序。</p>
-                    <p>我精通HTML、CSS、JavaScript以及现代前端框架，如React、Vue等。我还具有响应式设计和用户体验优化方面的专业知识。</p>
-                    <p>我喜欢解决复杂的问题，并致力于创建既美观又功能强大的数字体验。</p>
-                    <div class="skills">
-                        <h3>技能</h3>
-                        <div class="skill-tags">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>React</span>
-                            <span>Vue</span>
-                            <span>Node.js</span>
-                            <span>Responsive Design</span>
-                            <span>UI/UX</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- 联系方式 -->
     <section id="contact" class="contact">
@@ -136,32 +229,15 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <h3>Email</h3>
-                        <p>example@email.com</p>
+                        <p>liangzhenht@163.com</p>
                     </div>
                     <div class="contact-item">
-                        <h3>电话</h3>
-                        <p>+123 456 7890</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>地址</h3>
-                        <p>某某市某某区</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link">Github</a>
-                        <a href="#" class="social-link">LinkedIn</a>
-                        <a href="#" class="social-link">Twitter</a>
+                        <h3>WeChat</h3>
+                        <p>leonzhen666</p>
                     </div>
                 </div>
                 <div class="contact-form">
                     <form>
-                        <div class="form-group">
-                            <label for="name">姓名</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">邮箱</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
                         <div class="form-group">
                             <label for="message">留言</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
@@ -181,7 +257,7 @@
                 <nav class="footer-nav">
                     <a href="#home">首页</a>
                     <a href="#projects">项目</a>
-                    <a href="#about">关于</a>
+
                     <a href="#contact">联系</a>
                 </nav>
             </div>
@@ -190,4 +266,4 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
