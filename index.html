@@ -400,5 +400,80 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 获取所有tab按钮和项目网格
+            const tabButtons = document.querySelectorAll(".tab-btn");
+            const projectGrids = document.querySelectorAll(".project-grid");
+
+            // 模态框打开函数
+            window.openModal = function(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.add("active");
+                    document.body.style.overflow = "hidden";
+                }
+            };
+
+            // 模态框关闭函数
+            window.closeModal = function(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.remove("active");
+                    document.body.style.overflow = "auto";
+                }
+            };
+
+            // 为所有模态框添加点击事件
+            document.querySelectorAll(".modal").forEach(modal => {
+                // 点击模态框外部关闭
+                modal.addEventListener("click", function(e) {
+                    if (e.target === this) {
+                        this.classList.remove("active");
+                        document.body.style.overflow = "auto";
+                    }
+                });
+
+                // 点击关闭按钮关闭
+                const closeButton = modal.querySelector(".modal-close");
+                if (closeButton) {
+                    closeButton.addEventListener("click", function() {
+                        modal.classList.remove("active");
+                        document.body.style.overflow = "auto";
+                    });
+                }
+            });
+
+            // 初始化项目网格显示
+            projectGrids.forEach(grid => {
+                grid.classList.remove("active");
+                if (grid.dataset.category === "featured") {
+                    grid.classList.add("active");
+                }
+            });
+
+            // 为所有tab按钮添加点击事件
+            tabButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    // 移除所有tab按钮的active类
+                    tabButtons.forEach(btn => btn.classList.remove("active"));
+                    // 为当前点击的按钮添加active类
+                    button.classList.add("active");
+
+                    // 获取当前tab对应的类别
+                    const category = button.dataset.category;
+
+                    // 显示对应类别的项目网格，隐藏其他
+                    projectGrids.forEach(grid => {
+                        if (grid.dataset.category === category) {
+                            grid.classList.add("active");
+                        } else {
+                            grid.classList.remove("active");
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
